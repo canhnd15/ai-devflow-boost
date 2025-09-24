@@ -83,12 +83,51 @@ const Index = () => {
           
           {/* Team Information */}
           <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl border border-primary/10">
-            <div className="text-center">
+            <div className="text-center mb-6">
               <h3 className="text-xl font-bold text-primary mb-2">Team Early Birds</h3>
               <p className="text-sm text-muted-foreground italic">
                 "Chủ động, nhanh nhạy, sáng tạo, không ngại khó.<br />
                 Sẵn sàng học hỏi, chinh phục mọi dự án."
               </p>
+            </div>
+            
+            {/* Team Members */}
+            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="text-center p-3 bg-white/50 rounded-lg border border-primary/10">
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Users className="w-5 h-5 text-primary" />
+                </div>
+                <h4 className="font-medium text-sm text-primary">Nguyễn Đức Cảnh</h4>
+                <p className="text-xs text-muted-foreground">Leader - DEV BU10</p>
+              </div>
+              <div className="text-center p-3 bg-white/50 rounded-lg border border-accent/10">
+                <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Code className="w-5 h-5 text-accent" />
+                </div>
+                <h4 className="font-medium text-sm text-accent">Võ Ngọc Lân</h4>
+                <p className="text-xs text-muted-foreground">DEV BU10</p>
+              </div>
+              <div className="text-center p-3 bg-white/50 rounded-lg border border-success/10">
+                <div className="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Code className="w-5 h-5 text-success" />
+                </div>
+                <h4 className="font-medium text-sm text-success">Nguyễn Bá Thức</h4>
+                <p className="text-xs text-muted-foreground">DEV BU10</p>
+              </div>
+              <div className="text-center p-3 bg-white/50 rounded-lg border border-warning/10">
+                <div className="w-10 h-10 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <TestTube className="w-5 h-5 text-warning" />
+                </div>
+                <h4 className="font-medium text-sm text-warning">Nguyễn Thị Tỉnh</h4>
+                <p className="text-xs text-muted-foreground">EQA BU10</p>
+              </div>
+              <div className="text-center p-3 bg-white/50 rounded-lg border border-destructive/10">
+                <div className="w-10 h-10 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <TestTube className="w-5 h-5 text-destructive" />
+                </div>
+                <h4 className="font-medium text-sm text-destructive">Hoàng Đức Dũng</h4>
+                <p className="text-xs text-muted-foreground">EQA BU10</p>
+              </div>
             </div>
           </div>
         </div>
@@ -195,7 +234,7 @@ const Index = () => {
       </section>
 
       {/* Demo Steps Section */}
-      <section id="demo-process" className="py-16 px-6 bg-secondary/30">
+      <section id="demo-process" className="py-16 px-6 bg-gradient-to-br from-secondary/30 via-accent/10 to-primary/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-foreground">Quy trình Demo với AI Agent</h2>
@@ -204,122 +243,146 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="space-y-8">
-            {/* Step 1 */}
-            <div className="flex items-start gap-6 group">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
-                1
+          <div className="relative">
+            {/* Connection Lines */}
+            <div className="absolute left-1/2 top-20 bottom-20 w-1 bg-gradient-to-b from-primary via-accent to-success transform -translate-x-1/2 hidden lg:block opacity-30"></div>
+            
+            <div className="space-y-12">
+              {/* Step 1 */}
+              <div className="flex items-center gap-8 group lg:flex-row flex-col">
+                <div className="lg:w-1/2 lg:text-right">
+                  <Card className="border-none shadow-medium group-hover:shadow-large transition-all duration-500 bg-gradient-to-br from-primary/5 to-primary/10 hover:scale-105">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-3 lg:justify-end justify-center">
+                        <TestTube className="w-6 h-6 text-primary animate-pulse" />
+                        <h3 className="text-lg font-semibold text-primary">QA Agent 1: Tự động viết Test Case</h3>
+                      </div>
+                      <p className="text-muted-foreground mb-4">
+                        Dựa trên specification từ BA, AI agent tự động sinh ra test case chi tiết và lưu thành file
+                      </p>
+                      <div className="flex items-center gap-2 text-sm lg:justify-end justify-center">
+                        <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">Input: BA Spec</Badge>
+                        <ArrowRight className="w-4 h-4 text-primary" />
+                        <Badge variant="outline" className="border-primary/30">Output: Test Cases File</Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg ring-4 ring-primary/20 z-10">
+                  1
+                </div>
+                <div className="lg:w-1/2 lg:block hidden"></div>
               </div>
-              <Card className="flex-1 border-none shadow-soft group-hover:shadow-medium transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <TestTube className="w-5 h-5 text-primary" />
-                    <h3 className="text-lg font-semibold">QA Agent 1: Tự động viết Test Case</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    Dựa trên specification từ BA, AI agent tự động sinh ra test case chi tiết và lưu thành file
-                  </p>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Badge variant="secondary">Input: BA Spec</Badge>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground" />
-                    <Badge variant="outline">Output: Test Cases File</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
 
-            {/* Step 2 */}
-            <div className="flex items-start gap-6 group">
-              <div className="flex-shrink-0 w-12 h-12 bg-accent rounded-full flex items-center justify-center text-accent-foreground font-bold text-lg">
-                2
+              {/* Step 2 */}
+              <div className="flex items-center gap-8 group lg:flex-row flex-col">
+                <div className="lg:w-1/2 lg:block hidden"></div>
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-accent to-accent/70 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg ring-4 ring-accent/20 z-10">
+                  2
+                </div>
+                <div className="lg:w-1/2">
+                  <Card className="border-none shadow-medium group-hover:shadow-large transition-all duration-500 bg-gradient-to-br from-accent/5 to-accent/10 hover:scale-105">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <GitBranch className="w-6 h-6 text-accent animate-pulse" />
+                        <h3 className="text-lg font-semibold text-accent">Dev Agent: Code Review tự động</h3>
+                      </div>
+                      <p className="text-muted-foreground mb-4">
+                        Sau khi developer tạo PR, AI agent thực hiện review code ở 2 chế độ và gửi thông báo
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
+                          <h4 className="font-medium text-sm mb-2 text-accent">Dev Agent 1</h4>
+                          <p className="text-xs text-muted-foreground">Review overview toàn bộ PR</p>
+                        </div>
+                        <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
+                          <h4 className="font-medium text-sm mb-2 text-accent">Dev Agent 2</h4>
+                          <p className="text-xs text-muted-foreground">Review line-by-line chi tiết</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-              <Card className="flex-1 border-none shadow-soft group-hover:shadow-medium transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <GitBranch className="w-5 h-5 text-accent" />
-                    <h3 className="text-lg font-semibold">Dev Agent: Code Review tự động</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    Sau khi developer tạo PR, AI agent thực hiện review code ở 2 chế độ và gửi thông báo
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="p-3 bg-secondary/50 rounded-lg">
-                      <h4 className="font-medium text-sm mb-2">Dev Agent 1</h4>
-                      <p className="text-xs text-muted-foreground">Review overview toàn bộ PR</p>
-                    </div>
-                    <div className="p-3 bg-secondary/50 rounded-lg">
-                      <h4 className="font-medium text-sm mb-2">Dev Agent 2</h4>
-                      <p className="text-xs text-muted-foreground">Review line-by-line chi tiết</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
 
-            {/* Step 3 */}
-            <div className="flex items-start gap-6 group">
-              <div className="flex-shrink-0 w-12 h-12 bg-success rounded-full flex items-center justify-center text-success-foreground font-bold text-lg">
-                3
+              {/* Step 3 */}
+              <div className="flex items-center gap-8 group lg:flex-row flex-col">
+                <div className="lg:w-1/2 lg:text-right">
+                  <Card className="border-none shadow-medium group-hover:shadow-large transition-all duration-500 bg-gradient-to-br from-success/5 to-success/10 hover:scale-105">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-3 lg:justify-end justify-center">
+                        <Code className="w-6 h-6 text-success animate-pulse" />
+                        <h3 className="text-lg font-semibold text-success">Dev Agent 3: Viết Unit Test</h3>
+                      </div>
+                      <p className="text-muted-foreground mb-4">
+                        Tự động sinh unit test dựa trên code đã được review để đảm bảo coverage tốt
+                      </p>
+                      <div className="lg:text-right text-center">
+                        <Badge variant="secondary" className="bg-success/10 text-success border-success/20">Automated Unit Test Generation</Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-success to-success/70 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg ring-4 ring-success/20 z-10">
+                  3
+                </div>
+                <div className="lg:w-1/2 lg:block hidden"></div>
               </div>
-              <Card className="flex-1 border-none shadow-soft group-hover:shadow-medium transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Code className="w-5 h-5 text-success" />
-                    <h3 className="text-lg font-semibold">Dev Agent 3: Viết Unit Test</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    Tự động sinh unit test dựa trên code đã được review để đảm bảo coverage tốt
-                  </p>
-                  <Badge variant="secondary">Automated Unit Test Generation</Badge>
-                </CardContent>
-              </Card>
-            </div>
 
-            {/* Step 4 */}
-            <div className="flex items-start gap-6 group">
-              <div className="flex-shrink-0 w-12 h-12 bg-warning rounded-full flex items-center justify-center text-warning-foreground font-bold text-lg">
-                4
+              {/* Step 4 */}
+              <div className="flex items-center gap-8 group lg:flex-row flex-col">
+                <div className="lg:w-1/2 lg:block hidden"></div>
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-warning to-warning/70 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg ring-4 ring-warning/20 z-10">
+                  4
+                </div>
+                <div className="lg:w-1/2">
+                  <Card className="border-none shadow-medium group-hover:shadow-large transition-all duration-500 bg-gradient-to-br from-warning/5 to-warning/10 hover:scale-105">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <CheckCircle className="w-6 h-6 text-warning animate-pulse" />
+                        <h3 className="text-lg font-semibold text-warning">Senior Dev: Merge & Deploy</h3>
+                      </div>
+                      <p className="text-muted-foreground mb-4">
+                        Senior developer thực hiện merge code và deploy, hệ thống tự động thông báo kết quả
+                      </p>
+                      <div className="flex items-center gap-4 text-sm flex-wrap">
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                          <span>Thông báo QA (deploy success)</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 bg-destructive rounded-full animate-pulse"></div>
+                          <span>Thông báo Dev (deploy fail)</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-              <Card className="flex-1 border-none shadow-soft group-hover:shadow-medium transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <CheckCircle className="w-5 h-5 text-warning" />
-                    <h3 className="text-lg font-semibold">Senior Dev: Merge & Deploy</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    Senior developer thực hiện merge code và deploy, hệ thống tự động thông báo kết quả
-                  </p>
-                  <div className="flex items-center gap-4 text-sm">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-success rounded-full"></div>
-                      <span>Thông báo QA (deploy success)</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-destructive rounded-full"></div>
-                      <span>Thông báo Dev (deploy fail)</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
 
-            {/* Step 5 */}
-            <div className="flex items-start gap-6 group">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
-                5
+              {/* Step 5 */}
+              <div className="flex items-center gap-8 group lg:flex-row flex-col">
+                <div className="lg:w-1/2 lg:text-right">
+                  <Card className="border-none shadow-medium group-hover:shadow-large transition-all duration-500 bg-gradient-to-br from-primary/5 to-accent/5 hover:scale-105">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-3 lg:justify-end justify-center">
+                        <Zap className="w-6 h-6 text-primary animate-pulse" />
+                        <h3 className="text-lg font-semibold text-primary">QA Agent 2: Automation Testing</h3>
+                      </div>
+                      <p className="text-muted-foreground mb-4">
+                        Dựa trên test case từ bước 1, tự động chạy automation test để kiểm tra tính năng
+                      </p>
+                      <div className="lg:text-right text-center">
+                        <Badge variant="outline" className="border-primary/30">n8n Workflow Integration</Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg ring-4 ring-primary/20 z-10">
+                  5
+                </div>
+                <div className="lg:w-1/2 lg:block hidden"></div>
               </div>
-              <Card className="flex-1 border-none shadow-soft group-hover:shadow-medium transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Zap className="w-5 h-5 text-primary" />
-                    <h3 className="text-lg font-semibold">QA Agent 2: Automation Testing</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-4">
-                    Dựa trên test case từ bước 1, tự động chạy automation test để kiểm tra tính năng
-                  </p>
-                  <Badge variant="outline">n8n Workflow Integration</Badge>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
@@ -412,25 +475,39 @@ const Index = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <Card className="border-none shadow-medium bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4 text-foreground">Tính năng đang phát triển</h3>
-                <p className="text-lg text-muted-foreground mb-6">
-                  <strong>Giỏ hàng (Shopping Cart)</strong> - Cho phép người dùng chọn và đặt món ăn
-                </p>
-                <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
-                    <span>n8n Workflow</span>
+            <Card className="border-none shadow-large bg-gradient-to-r from-primary/10 via-accent/10 to-success/10 hover:shadow-glow transition-all duration-500">
+              <CardContent className="p-12">
+                <div className="mb-8">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+                    <CheckCircle className="w-10 h-10 text-white" />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-accent rounded-full"></div>
-                    <span>5 AI Agents</span>
+                  <h3 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-success bg-clip-text text-transparent">
+                    Thanks for Listening!
+                  </h3>
+                  <p className="text-xl text-muted-foreground mb-8">
+                    Cảm ơn các bạn đã lắng nghe về case study áp dụng AI Agent trong phát triển phần mềm
+                  </p>
+                </div>
+                
+                <div className="flex items-center justify-center gap-8 text-lg text-muted-foreground flex-wrap">
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                    <span className="font-medium">Team Early Birds</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-success rounded-full"></div>
-                    <span>Automation Testing</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 bg-accent rounded-full animate-pulse"></div>
+                    <span className="font-medium">Newwave Solutions</span>
                   </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-4 h-4 bg-success rounded-full animate-pulse"></div>
+                    <span className="font-medium">Mitec Food Ordering</span>
+                  </div>
+                </div>
+                
+                <div className="mt-8 text-center">
+                  <p className="text-sm text-muted-foreground italic">
+                    "Chủ động, nhanh nhạy, sáng tạo, không ngại khó"
+                  </p>
                 </div>
               </CardContent>
             </Card>
