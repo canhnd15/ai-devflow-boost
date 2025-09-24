@@ -1,11 +1,60 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, GitBranch, TestTube, Users, CheckCircle, AlertTriangle, Zap } from "lucide-react";
+import { ArrowRight, Code, GitBranch, TestTube, Users, CheckCircle, AlertTriangle, Zap, Menu, ChevronRight } from "lucide-react";
+import { useState } from "react";
 
 const Index = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsNavOpen(false);
+    }
+  };
+
+  const navigationItems = [
+    { id: 'context', title: 'Bối cảnh dự án', icon: Users },
+    { id: 'demo-process', title: 'Quy trình demo', icon: GitBranch },
+    { id: 'conclusion', title: 'Kết luận', icon: CheckCircle },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">
+      {/* Floating Navigation */}
+      <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50">
+        <div className="flex flex-col items-center">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setIsNavOpen(!isNavOpen)}
+            className="mb-2 bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary/10"
+          >
+            <Menu className="w-4 h-4" />
+          </Button>
+          
+          {isNavOpen && (
+            <div className="bg-background/95 backdrop-blur-sm border border-border rounded-lg p-2 shadow-lg">
+              {navigationItems.map((item) => (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => scrollToSection(item.id)}
+                  className="flex items-center justify-start w-full mb-1 text-xs hover:bg-primary/10"
+                >
+                  <item.icon className="w-3 h-3 mr-2" />
+                  <span className="whitespace-nowrap">{item.title}</span>
+                  <ChevronRight className="w-3 h-3 ml-2" />
+                </Button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="relative py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
@@ -31,11 +80,22 @@ const Index = () => {
               <span>Mitec Food Ordering System</span>
             </div>
           </div>
+          
+          {/* Team Information */}
+          <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl border border-primary/10">
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-primary mb-2">Team Early Birds</h3>
+              <p className="text-sm text-muted-foreground italic">
+                "Chủ động, nhanh nhạy, sáng tạo, không ngại khó.<br />
+                Sẵn sàng học hỏi, chinh phục mọi dự án."
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Bối cảnh Section */}
-      <section className="py-16 px-6">
+      <section id="context" className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-foreground">Bối cảnh Dự án</h2>
@@ -135,7 +195,7 @@ const Index = () => {
       </section>
 
       {/* Demo Steps Section */}
-      <section className="py-16 px-6 bg-secondary/30">
+      <section id="demo-process" className="py-16 px-6 bg-secondary/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-foreground">Quy trình Demo với AI Agent</h2>
@@ -266,7 +326,7 @@ const Index = () => {
       </section>
 
       {/* Kết luận Section */}
-      <section className="py-16 px-6">
+      <section id="conclusion" className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-foreground">Kết luận</h2>
