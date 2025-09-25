@@ -88,10 +88,56 @@ export default {
             height: "0",
           },
         },
+        "flip-next": {
+          "0%": {
+            transform: "perspective(1000px) rotateY(0deg)",
+          },
+          "50%": {
+            transform: "perspective(1000px) rotateY(-90deg)",
+          },
+          "100%": {
+            transform: "perspective(1000px) rotateY(0deg)",
+          },
+        },
+        "flip-prev": {
+          "0%": {
+            transform: "perspective(1000px) rotateY(0deg)",
+          },
+          "50%": {
+            transform: "perspective(1000px) rotateY(90deg)",
+          },
+          "100%": {
+            transform: "perspective(1000px) rotateY(0deg)",
+          },
+        },
+        "slide-in-right": {
+          "0%": {
+            transform: "translateX(100%)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
+        "slide-in-left": {
+          "0%": {
+            transform: "translateX(-100%)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "flip-next": "flip-next 0.8s ease-in-out",
+        "flip-prev": "flip-prev 0.8s ease-in-out",
+        "slide-in-right": "slide-in-right 0.6s ease-out",
+        "slide-in-left": "slide-in-left 0.6s ease-out",
       },
     },
   },
