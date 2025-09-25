@@ -294,147 +294,87 @@ const Index = () => {
         
         <div className="relative">
           {/* Process Flow Container */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center justify-items-center">
             {/* Step 1 */}
             <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '0.5s' }}>
               <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-cyan-500/50">
                 1
               </div>
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-64 text-center">
-                <div className="text-3xl mb-4">🎯</div>
-                <h3 className="text-lg font-bold mb-3">Phân tích yêu cầu</h3>
-                <p className="text-sm text-gray-300">AI Agent phân tích và hiểu rõ yêu cầu từ khách hàng</p>
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-72 h-48 flex flex-col justify-center text-center">
+                <div className="text-3xl mb-4">📋</div>
+                <h3 className="text-lg font-bold mb-3">QA Agent 1: Tự động viết Test Case</h3>
+                <p className="text-sm text-gray-300">Dựa trên specification từ BA, AI agent tự động sinh ra test case chi tiết và lưu thành file</p>
               </div>
             </div>
 
-            {/* Connecting Arrow 1 */}
-            <div className="hidden lg:block">
-              <svg className="w-16 h-8" viewBox="0 0 64 32">
-                <defs>
-                  <linearGradient id="arrowGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#06b6d4" />
-                    <stop offset="100%" stopColor="#3b82f6" />
-                  </linearGradient>
-                </defs>
-                <path 
-                  d="M 8 16 L 48 16 L 40 8 M 48 16 L 40 24" 
-                  stroke="url(#arrowGradient1)" 
-                  strokeWidth="2" 
-                  fill="none"
-                  strokeDasharray="60"
-                  className="animate-line-draw"
-                  style={{ animationDelay: '1.2s' }}
-                />
-              </svg>
-            </div>
 
             {/* Step 2 */}
             <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '1.0s' }}>
               <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-purple-500/50">
                 2
               </div>
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-64 text-center">
-                <div className="text-3xl mb-4">⚡</div>
-                <h3 className="text-lg font-bold mb-3">Tạo code tự động</h3>
-                <p className="text-sm text-gray-300">Sinh code React/TypeScript hoàn chỉnh theo yêu cầu</p>
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-72 h-48 flex flex-col justify-center text-center">
+                <div className="text-3xl mb-4">🔍</div>
+                <h3 className="text-lg font-bold mb-3">Dev Agent: Code Review tự động</h3>
+                <p className="text-sm text-gray-300">Sau khi developer tạo PR, AI agent thực hiện review code ở 2 chế độ và gửi thông báo</p>
               </div>
             </div>
 
-            {/* Connecting Arrow 2 */}
-            <div className="hidden lg:block">
-              <svg className="w-16 h-8" viewBox="0 0 64 32">
-                <defs>
-                  <linearGradient id="arrowGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#8b5cf6" />
-                    <stop offset="100%" stopColor="#06b6d4" />
-                  </linearGradient>
-                </defs>
-                <path 
-                  d="M 8 16 L 48 16 L 40 8 M 48 16 L 40 24" 
-                  stroke="url(#arrowGradient2)" 
-                  strokeWidth="2" 
-                  fill="none"
-                  strokeDasharray="60"
-                  className="animate-line-draw"
-                  style={{ animationDelay: '1.7s' }}
-                />
-              </svg>
-            </div>
 
             {/* Step 3 */}
             <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '1.5s' }}>
               <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-emerald-500/50">
                 3
               </div>
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-64 text-center">
-                <div className="text-3xl mb-4">🔍</div>
-                <h3 className="text-lg font-bold mb-3">Kiểm tra & tối ưu</h3>
-                <p className="text-sm text-gray-300">AI tự động kiểm tra lỗi và tối ưu hóa performance</p>
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-72 h-48 flex flex-col justify-center text-center">
+                <div className="text-3xl mb-4">⚡</div>
+                <h3 className="text-lg font-bold mb-3">Dev Agent 3: Viết Unit Test</h3>
+                <p className="text-sm text-gray-300">Tự động sinh unit test dựa trên code đã được review để đảm bảo coverage tốt</p>
               </div>
             </div>
           </div>
 
           {/* Second Row */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mt-12 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center justify-items-center mt-8">
             {/* Step 4 */}
             <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '2.0s' }}>
               <div className="bg-gradient-to-br from-pink-500 to-rose-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-pink-500/50">
                 4
               </div>
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-64 text-center">
-                <div className="text-3xl mb-4">🎨</div>
-                <h3 className="text-lg font-bold mb-3">Styling & UI/UX</h3>
-                <p className="text-sm text-gray-300">Áp dụng Tailwind CSS và tạo giao diện đẹp mắt</p>
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-72 h-48 flex flex-col justify-center text-center">
+                <div className="text-3xl mb-4">✅</div>
+                <h3 className="text-lg font-bold mb-3">Senior Dev: Merge & Deploy</h3>
+                <p className="text-sm text-gray-300">Senior developer thực hiện merge code và deploy, hệ thống tự động thông báo kết quả</p>
               </div>
             </div>
 
-            {/* Connecting Arrow 3 */}
-            <div className="hidden lg:block">
-              <svg className="w-16 h-8" viewBox="0 0 64 32">
-                <defs>
-                  <linearGradient id="arrowGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#ec4899" />
-                    <stop offset="100%" stopColor="#f59e0b" />
-                  </linearGradient>
-                </defs>
-                <path 
-                  d="M 8 16 L 48 16 L 40 8 M 48 16 L 40 24" 
-                  stroke="url(#arrowGradient3)" 
-                  strokeWidth="2" 
-                  fill="none"
-                  strokeDasharray="60"
-                  className="animate-line-draw"
-                  style={{ animationDelay: '2.2s' }}
-                />
-              </svg>
-            </div>
 
             {/* Step 5 */}
             <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '2.5s' }}>
               <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-orange-500/50">
                 5
               </div>
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-64 text-center">
-                <div className="text-3xl mb-4">🚀</div>
-                <h3 className="text-lg font-bold mb-3">Deploy & Test</h3>
-                <p className="text-sm text-gray-300">Triển khai và test ứng dụng trên môi trường thực</p>
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-72 h-48 flex flex-col justify-center text-center">
+                <div className="text-3xl mb-4">⚡</div>
+                <h3 className="text-lg font-bold mb-3">QA Agent 2: Automation Testing</h3>
+                <p className="text-sm text-gray-300">Dựa trên test case từ bước 1, tự động chạy automation test để kiểm tra tính năng</p>
               </div>
             </div>
 
-            {/* Success Indicator */}
-            <div className="hidden lg:block">
-              <div className="animate-step-appear" style={{ animationDelay: '3.0s' }}>
-                <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-full w-12 h-12 flex items-center justify-center ml-8 shadow-lg shadow-green-500/50">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </div>
+
+            {/* Step 6 */}
+            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '3.0s' }}>
+              <div className="bg-gradient-to-br from-teal-500 to-cyan-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-teal-500/50">
+                6
+              </div>
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-72 h-48 flex flex-col justify-center text-center">
+                <div className="text-3xl mb-4">🔍</div>
+                <h3 className="text-lg font-bold mb-3">QA: Review Test Cases</h3>
+                <p className="text-sm text-gray-300">QA review lại các test case đã được chạy auto để đảm bảo chất lượng</p>
               </div>
             </div>
           </div>
 
-          {/* Vertical Connecting Line for Mobile */}
-          <div className="lg:hidden absolute left-1/2 top-0 w-0.5 h-full bg-gradient-to-b from-cyan-500 to-orange-500 transform -translate-x-1/2 opacity-30"></div>
         </div>
       </div>
     </div>,
