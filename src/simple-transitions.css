@@ -282,6 +282,57 @@ html, body {
   text-shadow: none !important;
 }
 
+/* Hide navigation controls by default, show on hover */
+.fixed.bottom-8 {
+  opacity: 0;
+  transform: translateY(20px) translateX(-50%);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fixed.bottom-8:hover {
+  opacity: 1;
+  transform: translateY(0) translateX(-50%);
+}
+
+/* Remove page hover trigger - only show on button hover */
+/* .relative:hover .fixed.bottom-8 {
+  opacity: 1;
+  transform: translateY(0) translateX(-50%);
+} */
+
+/* Hide page indicator by default, show on hover */
+.fixed.top-8 {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fixed.top-8:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Remove page hover trigger for page indicator - only show on hover */
+/* .relative:hover .fixed.top-8 {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+/* Ensure navigation controls stay centered */
+.fixed.bottom-8 {
+  left: 50% !important;
+  transform: translateX(-50%) translateY(20px);
+}
+
+.fixed.bottom-8:hover {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Remove page hover trigger - only show on button hover */
+/* .relative:hover .fixed.bottom-8 {
+  transform: translateX(-50%) translateY(0);
+} */
+
 /* Hover effects disabled for demo steps */
 /* .demo-process .animate-step-appear:hover {
   transform: translateY(-8px) scale(1.02) !important;
