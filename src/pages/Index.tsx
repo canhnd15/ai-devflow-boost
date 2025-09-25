@@ -16,7 +16,7 @@ import {
   BugIcon,
   BugOffIcon,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import aiNetworkBg from "@/assets/ai-network-bg.jpg";
 import aiRobotSilhouette from "@/assets/ai-robot-silhouette.jpg";
 import codeMatrixBg from "@/assets/code-matrix-bg.jpg";
@@ -57,16 +57,16 @@ const Index = () => {
     }
   };
 
-  // Auto-advance
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (currentPage < totalPages - 1 && !isTransitioning) {
-        nextPage();
-      }
-    }, 8000); // Auto-advance every 8 seconds
+  // Auto-advance disabled - only manual navigation
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (currentPage < totalPages - 1 && !isTransitioning) {
+  //       nextPage();
+  //     }
+  //   }, 8000); // Auto-advance every 8 seconds
 
-    return () => clearTimeout(timer);
-  }, [currentPage, isTransitioning]);
+  //   return () => clearTimeout(timer);
+  // }, [currentPage, isTransitioning]);
 
   const pages = [
     // Page 1: Giới thiệu
@@ -296,11 +296,11 @@ const Index = () => {
           {/* Process Flow Container */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 relative">
             {/* Step 1 */}
-            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '0.3s' }}>
+            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '0.5s' }}>
               <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-cyan-500/50">
                 1
               </div>
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 w-64 text-center">
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-64 text-center">
                 <div className="text-3xl mb-4">🎯</div>
                 <h3 className="text-lg font-bold mb-3">Phân tích yêu cầu</h3>
                 <p className="text-sm text-gray-300">AI Agent phân tích và hiểu rõ yêu cầu từ khách hàng</p>
@@ -323,17 +323,17 @@ const Index = () => {
                   fill="none"
                   strokeDasharray="60"
                   className="animate-line-draw"
-                  style={{ animationDelay: '1.0s' }}
+                  style={{ animationDelay: '1.2s' }}
                 />
               </svg>
             </div>
 
             {/* Step 2 */}
-            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '0.6s' }}>
+            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '1.0s' }}>
               <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-purple-500/50">
                 2
               </div>
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 w-64 text-center">
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-64 text-center">
                 <div className="text-3xl mb-4">⚡</div>
                 <h3 className="text-lg font-bold mb-3">Tạo code tự động</h3>
                 <p className="text-sm text-gray-300">Sinh code React/TypeScript hoàn chỉnh theo yêu cầu</p>
@@ -356,17 +356,17 @@ const Index = () => {
                   fill="none"
                   strokeDasharray="60"
                   className="animate-line-draw"
-                  style={{ animationDelay: '1.4s' }}
+                  style={{ animationDelay: '1.7s' }}
                 />
               </svg>
             </div>
 
             {/* Step 3 */}
-            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '0.9s' }}>
+            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '1.5s' }}>
               <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-emerald-500/50">
                 3
               </div>
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 w-64 text-center">
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-64 text-center">
                 <div className="text-3xl mb-4">🔍</div>
                 <h3 className="text-lg font-bold mb-3">Kiểm tra & tối ưu</h3>
                 <p className="text-sm text-gray-300">AI tự động kiểm tra lỗi và tối ưu hóa performance</p>
@@ -377,11 +377,11 @@ const Index = () => {
           {/* Second Row */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mt-12 relative">
             {/* Step 4 */}
-            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '1.2s' }}>
+            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '2.0s' }}>
               <div className="bg-gradient-to-br from-pink-500 to-rose-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-pink-500/50">
                 4
               </div>
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 w-64 text-center">
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-64 text-center">
                 <div className="text-3xl mb-4">🎨</div>
                 <h3 className="text-lg font-bold mb-3">Styling & UI/UX</h3>
                 <p className="text-sm text-gray-300">Áp dụng Tailwind CSS và tạo giao diện đẹp mắt</p>
@@ -404,17 +404,17 @@ const Index = () => {
                   fill="none"
                   strokeDasharray="60"
                   className="animate-line-draw"
-                  style={{ animationDelay: '1.8s' }}
+                  style={{ animationDelay: '2.2s' }}
                 />
               </svg>
             </div>
 
             {/* Step 5 */}
-            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '1.5s' }}>
+            <div className="flex flex-col items-center animate-step-appear" style={{ animationDelay: '2.5s' }}>
               <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4 shadow-lg shadow-orange-500/50">
                 5
               </div>
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 w-64 text-center">
+              <div className="bg-white/10 rounded-2xl p-6 border border-white/20 w-64 text-center">
                 <div className="text-3xl mb-4">🚀</div>
                 <h3 className="text-lg font-bold mb-3">Deploy & Test</h3>
                 <p className="text-sm text-gray-300">Triển khai và test ứng dụng trên môi trường thực</p>
@@ -423,7 +423,7 @@ const Index = () => {
 
             {/* Success Indicator */}
             <div className="hidden lg:block">
-              <div className="animate-step-appear" style={{ animationDelay: '1.8s' }}>
+              <div className="animate-step-appear" style={{ animationDelay: '3.0s' }}>
                 <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-full w-12 h-12 flex items-center justify-center ml-8 shadow-lg shadow-green-500/50">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>

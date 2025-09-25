@@ -146,15 +146,15 @@ html, body {
   transition: all 0.3s cubic-bezier(0.55, 0.06, 0.68, 0.19);
 }
 
-/* Smooth step appear animation for demo process */
+/* Clear step appear animation for demo process */
 .animate-step-appear {
   opacity: 0;
   transform: translateY(30px) scale(0.9);
-  animation: stepAppear 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: clearStepAppear 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   animation-fill-mode: forwards;
 }
 
-@keyframes stepAppear {
+@keyframes clearStepAppear {
   0% {
     opacity: 0;
     transform: translateY(30px) scale(0.9);
@@ -169,20 +169,34 @@ html, body {
   }
 }
 
-/* Smooth line draw animation for arrows */
+/* Modern line draw animation for arrows */
 .animate-line-draw {
   stroke-dasharray: 60;
   stroke-dashoffset: 60;
-  animation: lineDraw 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  opacity: 0;
+  filter: drop-shadow(0 0 8px currentColor);
+  animation: modernLineDraw 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   animation-fill-mode: forwards;
 }
 
-@keyframes lineDraw {
+@keyframes modernLineDraw {
   0% {
     stroke-dashoffset: 60;
+    opacity: 0;
+    filter: drop-shadow(0 0 0px currentColor);
+  }
+  20% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+  60% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 12px currentColor);
   }
   100% {
     stroke-dashoffset: 0;
+    opacity: 1;
+    filter: drop-shadow(0 0 8px currentColor);
   }
 }
 
@@ -204,6 +218,7 @@ html, body {
 .animate-step-appear {
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
+  filter: none !important;
 }
 
 /* Force visibility for demo process items */
@@ -211,6 +226,7 @@ html, body {
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
   visibility: visible !important;
+  filter: none !important;
 }
 
 /* Ensure items remain visible after animation completes */
@@ -219,6 +235,7 @@ html, body {
   transform: translateY(0) scale(1) !important;
   visibility: visible !important;
   animation-fill-mode: forwards !important;
+  filter: none !important;
 }
 
 /* Ensure arrows remain visible after animation completes */
@@ -249,3 +266,60 @@ html, body {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* Force clear text and content visibility */
+.demo-process .animate-step-appear * {
+  filter: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Ensure all text is crisp and clear */
+.demo-process .animate-step-appear h3,
+.demo-process .animate-step-appear p {
+  filter: none !important;
+  text-shadow: none !important;
+}
+
+/* Hover effects disabled for demo steps */
+/* .demo-process .animate-step-appear:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.3)) !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.demo-process .animate-step-appear:hover .bg-gradient-to-br {
+  transform: scale(1.1) !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+} */
+
+/* Pulse effect disabled for step numbers */
+/* .demo-process .animate-step-appear .bg-gradient-to-br {
+  animation: modernPulse 2s ease-in-out infinite;
+}
+
+@keyframes modernPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.1);
+  }
+} */
+
+/* Glow effect disabled for arrows */
+.demo-process .animate-line-draw {
+  animation: modernLineDraw 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* @keyframes modernGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 16px currentColor) drop-shadow(0 0 24px currentColor);
+  }
+} */
