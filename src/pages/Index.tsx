@@ -80,7 +80,7 @@ const Index = () => {
           <Zap className="w-4 h-4 mr-2" />
           Ứng dụng AI Agent trong Phát triển Phần mềm
         </Badge>
-        <h1 className="text-5xl font-bold mb-8 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
           AI AGENT CÓ THỂ VIẾT CODE, VIẾT TEST, REVIEW CODE?
         </h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -177,7 +177,7 @@ const Index = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Do quản lý bằng tem phiếu phức tạp, khó nắm được doanh thu nên nhà
-            ăn Mitec hợp đồng với Newwave Solutions để xây một ứng dụng hỗ trợ
+            ăn Mitec hợp tác với Newwave Solutions để xây một ứng dụng hỗ trợ
             quản lý việc đặt đồ ăn cho nhân viên, cán bộ các công ty trong và
             ngoài tòa nhà Mitec.
           </p>
@@ -253,14 +253,15 @@ const Index = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-success text-xl">
                 <CheckCircle className="w-6 h-6" />
-                Giải pháp với sự hỗ trợ của AI Agent
+                Nâng cấp quy trình phát triển với AI Agent
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
                 <p className="text-muted-foreground mb-6">
                   Áp dụng AI Agent để tự động hóa các bước trong quy trình
-                  phát triển:
+                  phát triển phần mềm, giúp team nhỏ có thể đảm nhiệm
+                  dự án lớn hơn với chất lượng ổn định.
                 </p>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center p-4 bg-secondary/50 rounded-lg">
