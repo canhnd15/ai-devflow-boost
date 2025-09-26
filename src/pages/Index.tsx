@@ -207,7 +207,7 @@ const Index = () => {
                 <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BugOffIcon className="w-8 h-8 text-success" />
                 </div>
-                <h4 className="font-medium mb-3 text-lg">QA kiêm BA</h4>
+                <h4 className="font-medium mb-3 text-lg">QA Engineer</h4>
                 <p className="text-muted-foreground">100% effort</p>
               </div>
             </div>
@@ -227,7 +227,7 @@ const Index = () => {
                 <div className="flex items-start gap-4">
                   <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                   <p className="text-muted-foreground">
-                    <strong>Nguồn lực hạn chế:</strong> 2 developers + 1 QA/BA
+                    <strong>Nguồn lực hạn chế:</strong> 2 developers + 1 QA
                     cho toàn bộ dự án
                   </p>
                 </div>
@@ -491,7 +491,9 @@ const Index = () => {
               </h3>
               <p className="text-lg text-muted-foreground">
                 AI Agent mở ra nhiều cơ hội tối ưu hóa quy trình phát triển phần mềm,
-                tuy nhiên cần cân nhắc kỹ về chi phí và chất lượng kiểm soát
+                tuy nhiên cần cân nhắc kỹ về chi phí và kiểm soát chất lượng đầu ra.
+                Với sự giám sát và điều chỉnh phù hợp, AI Agent có thể trở thành
+                trợ thủ đắc lực cho các team phát triển.
               </p>
             </CardContent>
           </Card>
